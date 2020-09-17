@@ -9,7 +9,8 @@ int main(void)
 int c;
 c = 97;
 while (c < 122)
-if(c != 101 && c != 113){ 
+if (c != 101 && c != 113)
+{
 putchar (c);
 c++;
 }
