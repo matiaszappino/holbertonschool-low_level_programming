@@ -18,7 +18,7 @@ continue;
 }
 putchar (a);
 putchar (b);
-if (a != 57 || b != 57)
+if (a != 56 || b != 57 ) 
 {
 putchar(',');
 putchar(' ');
@@ -26,5 +26,5 @@ putchar(' ');
 }
 }
 putchar('\n');
-return (0);
+return(0);
 }
