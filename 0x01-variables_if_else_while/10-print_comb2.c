@@ -1,26 +1,30 @@
 #include <stdio.h>
 /**
- * main - Entry point
+ * main - entry point
  *
- * Return: Always 0 (Success)
+ * Return: always 0 (success)
  */
 int main(void)
 {
-int c;
-c = '00';
-while (c <= '99')
+int a;
+int b;
+a = 0;
+while (a <= 9)
 {
-putchar (c);
-if (c == '99')
+b = 0;
+while (b <= 9)
 {
-}
-else
+putchar('0' + a);
+putchar('0' + b);
+if (a != 9 || b != 9)
 {
-putchar (',');
-putchar (' ');
+putchar(',');
+putchar(' ');
 }
-c++;
+b++;
 }
-putchar ('\n');
+a++;
+}
+putchar('\n');
 return (0);
 }
