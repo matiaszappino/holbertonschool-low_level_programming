@@ -13,10 +13,6 @@ if (a < 0)
 {
 a = -a;
 }
-else
-{
-a = a;
-}
 lastDigit = a % 10;
 _putchar('0' + lastDigit);
 return (lastDigit);
