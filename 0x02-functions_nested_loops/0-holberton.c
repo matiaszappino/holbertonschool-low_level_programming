@@ -1,4 +1,9 @@
 #include "holberton.h"
+/**
+ *main - use only user defined variables to create output
+ *
+ *Return: print to stdout "Holberton", followed by a new line.
+ */
 int main(void)
 {
 _putchar('H');
