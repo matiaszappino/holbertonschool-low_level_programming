@@ -1,4 +1,3 @@
-#include <unistd.h>
 #include <stdio.h>
 #include "holberton.h"
 /**
@@ -10,17 +9,19 @@
  */
 void print_to_98(int n)
 {
-int i;
-for (i = n; i < 98; i++)
+int n;
+while (n < 98)
 {
 printf("%i, ", i);
+i++;
 }
-for (i = n; i > 98; i--)
+while (n > 98)
 {
-printf("%i, ", i);
+printf("%i, ", n);
+n--;
 }
-if (i == 98)
+if (n == 98)
 {
-printf("%i, ", i);
+printf("%i, ", n);
 }
 }
