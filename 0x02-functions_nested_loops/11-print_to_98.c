@@ -3,7 +3,7 @@
 
 /**
  * print_to_98  - print
- * @n: 
+ * @n: int n
  *
  * Return: Printed numbers
  */
