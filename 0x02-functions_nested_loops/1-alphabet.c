@@ -6,9 +6,9 @@
  */
 void print_alphabet(void)
 {
-char a;
-a = '97';
-while (a <= '122')
+int a;
+a = 97;
+while (a <= 122)
 }
 _putchar(a);
 a++;
