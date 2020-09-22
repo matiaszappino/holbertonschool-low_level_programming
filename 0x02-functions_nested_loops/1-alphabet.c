@@ -1,17 +1,20 @@
 #include "holberton.h"
+
 /**
- * print_alphabet - writes the character c to stdout
+ *print_alphabet- use only user defined variables to create output
  *
- * Return: print the alphabet
+ *Return: print to stdout the alphabet, in lowercase, followed by a new line.
  */
 void print_alphabet(void)
 {
-char d;
-d = 'a';
-while (d <= 'z')
-}
-_putchar(d);
-d++;
-}
-_putchar('\n');
+	char c;
+
+	c = 'a';
+
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
+	}
+	_putchar('\n');
 }
