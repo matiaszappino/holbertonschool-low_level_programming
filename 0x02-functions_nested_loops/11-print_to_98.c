@@ -1,27 +1,26 @@
-#include <stdio.h>
 #include "holberton.h"
+#include <stdio.h>
+
 /**
- * print_to_98 - writes the character c to stdout
- * @n: The character to print
+ * print_to_98  - print numbers n to 98
+ * @n: integer
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: print to stdout numbers n to 98 followed by a newline.
  */
 void print_to_98(int n)
 {
-int n;
-while (n < 98)
-{
-printf("%i, ", i);
-i++;
-}
-while (n > 98)
-{
-printf("%i, ", n);
-n--;
-}
-if (n == 98)
-{
-printf("%i, ", n);
-}
+	while (n < 98)
+	{
+		printf("%d, ", n);
+		n++;
+	}
+	while (n > 98)
+	{
+		printf("%d, ", n);
+		n--;
+	}
+	if (n == 98)
+	{
+		printf("%d\n", n);
+	}
 }
