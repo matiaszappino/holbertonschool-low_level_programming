@@ -1,13 +1,27 @@
-#include <unistd.h>
+#include "holberton.h"
 
 /**
- * print_triangle - writes the character c to stdout
- * @size: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ *print_triangle - print a triangle
+ *@size: integer
  */
-
+void print_triangle(int size)
 {
-	print_triangle(int size);
+	int x;
+	int y;
+
+	if (size <= 0)
+	{
+		_putchar('\n');
+	}
+	for (x = 1; x <= size; x++)
+	{
+		for (y = 1; y <= size; y++)
+		{
+			if (y <= size - x)
+				_putchar(' ');
+			else
+				_putchar('#');
+		}
+		_putchar('\n');
+	}
 }
