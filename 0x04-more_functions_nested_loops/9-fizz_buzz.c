@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * main - writes the character c to stdout
+ *
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -13,12 +13,11 @@ int main(void)
 
 	for (a = 1; a <= 100; a++)
 	{
-		
 		if (((a % 3) == 0) && ((a % 5) != 0))
 		{
 			printf("Fizz ");
 		}
-		if (a == 100)
+		else if (a == 100)
 		{
 			printf("Buzz");
 		}
@@ -26,7 +25,7 @@ int main(void)
 		{
 			printf("Buzz ");
 		}
-	 	else if (((a % 3) == 0 ) && ((a % 5) == 0))
+		else if (((a % 3) == 0) && ((a % 5) == 0))
 		{
 			printf("FizzBuzz ");
 		}
@@ -37,4 +36,4 @@ int main(void)
 	}
 printf("\n");
 return (0);
-}	
+}
