@@ -1,13 +1,23 @@
-#include <unistd.h>
-
+#include "holberton.h"
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ *print_line - d
+ *@n: integer
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ *Return - print line n spaces long to stdout; print newline if n<=0
  */
+
 void print_line(int n)
 {
-	for (n = 0; 
+	int x;
+
+	if (n > 0)
+	{
+		for (x = 0; x < n; x++)
+			_putchar('_');
+		_putchar('\n');
+	}
+	else
+	{
+		_putchar('\n');
+	}
 }
