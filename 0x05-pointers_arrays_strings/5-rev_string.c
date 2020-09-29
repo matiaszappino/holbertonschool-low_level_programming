@@ -1,29 +1,27 @@
 #include "holberton.h"
+
 /**
- * rev_string - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * rev_string - reverse a string
+ * @s: characters
  */
 void rev_string(char *s)
-{	
-	int largo = 0;
-        char t1;
-	char t2;
-	char a = *(s + largo);
-	char b = *(s - largo);
+{
+	int i = 0;
+	int j;
+	char a;
+	char b;
 
-        while (*(s + largo) != '\0')
-        {
-        largo++;
-        }
-	while (a > b)
-	{	
-		t1 = a;
-		t2 = b;
-		a = t2;
-		b = t1;
-	largo --;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	i--;
+	for (j = 0; j < i; j++)
+	{
+		a = s[j];
+		b = s[i];
+		s[j] = b;
+		s[i] = a;
+		i--;
 	}
 }
