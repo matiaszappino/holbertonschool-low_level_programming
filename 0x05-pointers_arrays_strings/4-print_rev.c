@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
+ * print_rev - writes the character c to stdout
+ * @s: The pointer
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
@@ -10,7 +10,7 @@
 void print_rev(char *s)
 {
 	int a = 0;
-	
+
 	while (*(s + a) != '\0')
 	{
 	a++;
@@ -20,4 +20,4 @@ void print_rev(char *s)
 	_putchar(*(s + a));
 	}
 _putchar('\n');
-} 
+}
