@@ -1,9 +1,8 @@
-#include <unistd.h>
-
+#include <stdio.h>
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
+ * _strcpy - writes the character c to stdout
+ * @dest: The character to print
+ * @src: Source
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -11,7 +10,7 @@ char *_strcpy(char *dest, char *src)
 {
 	int i;
 	int n;
-	
+
 	for (n = 0; *(src + n) != '\0' ; n++)
 	{
 	}
