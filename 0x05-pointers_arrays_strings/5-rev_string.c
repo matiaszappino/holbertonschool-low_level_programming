@@ -1,7 +1,6 @@
 #include "holberton.h"
-
 /**
- * _putchar - writes the character c to stdout
+ * rev_string - writes the character c to stdout
  * @c: The character to print
  *
  * Return: On success 1.
@@ -12,20 +11,19 @@ void rev_string(char *s)
 	int largo = 0;
         char t1;
 	char t2;
-	char fin;
-	char inicio;
+	char a = *(s + largo);
+	char b = *(s - largo);
 
         while (*(s + largo) != '\0')
         {
         largo++;
         }
-	while (fin > inicio)
+	while (a > b)
 	{	
-		t1 = *inicio;
-		t2 = *fin;
-		*inicio = t2;
-		*fin = t1;
-	inicio++;
-	fin--;
+		t1 = a;
+		t2 = b;
+		a = t2;
+		b = t1;
+	largo --;
 	}
 }
