@@ -12,7 +12,7 @@ int c;
 int pm;
 int d;
 
-for (c = 0; *(str + c); c++)
+for (c = 0; *(str + c) != '\0'; c++)
 {
 }
 if ((c % 2) != 0)
