@@ -1,4 +1,5 @@
 #include "holberton.h"
+int _pow(int n);
 /**
  * _atoi - writes the character c to stdout
  * @s: The character to print
@@ -44,5 +45,16 @@ res += ((s[fin] - '0') * _pow(n)) * signo;
 }
 return (res);
 }
+}
+int _pow(int n)
+{
+int xres = 1;
+int p;
+
+for (p = 0; p < n; p++)
+{
+xres *= 10;
+}
+return (xres);
 }
 
