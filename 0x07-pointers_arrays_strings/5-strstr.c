@@ -1,27 +1,22 @@
-#include <unistd.h>
-
+#include "holberton.h"
 /**
- * _strstr - writes the character c to stdout
- * @haystack: The character to print
- * @needle: a
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ *_strstr - locates a substring
+ *@haystack: string where find
+ *@needle: sting to find
+ *Return: pointer were string was founded
  */
 char *_strstr(char *haystack, char *needle)
 {
-	int i;
-
+	int i, j;
+	if (*needle == 0)
+		return (haystack);
 	for (i = 0; haystack[i] != '\0'; i++)
 	{
-		int j;
-
-		if (haystack[i] == needle[0])
+		if (needle[0] == haystack[i])
 		{
-
 			for (j = 1; needle[j] != '\0'; j++)
-
 			{
-				if (!(haystack[i + j] == needle[j]))
+				if (!(needle[j] == haystack[i + j]))
 				{
 					break;
 				}
@@ -29,5 +24,5 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
-return (NULL);
+	return (0);
 }
