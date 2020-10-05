@@ -17,10 +17,8 @@ void print_chessboard(char (*a)[8])
 	{
 		for (j = 0; j < 8; j++)
 		{
-			if (a[i] <= 'z' && a[i] >= 'a' || a[i] <= 'Z' && a[i] >= 'A')
-			{
 			_putchar(a[i]);
-			}
+			_putchar(a[j]);
 		}
 	}
-}	
+}
