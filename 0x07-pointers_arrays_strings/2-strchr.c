@@ -16,9 +16,7 @@ char *_strchr(char *s, char c)
 	{
 		if (s[i] == c)
 		{
-			char *p = &s[i];
-
-			return (p);
+			return (&s[i]);
 		}
 	}
 return (NULL);
