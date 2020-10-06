@@ -21,10 +21,10 @@ void print_diagsums(int *a, int size)
 		
 			if(x == y)
 			{
-				diagonal = a[x + y];
+				diagonal += a[x][y];
 			}
 			if ((x + y) == (size - 1))
-				seconddiagonal = a[x + y];
+				seconddiagonal +=a [x][y];
 		}
 	}
 	printf("%i", diagonal);
