@@ -17,7 +17,7 @@ void print_diagsums(int *a, int size)
 	{
 	diagonal += a[x];
 	}
-	for (x = size - 1; x < (size * size - 1); x += size -1)
+	for (x = size - 1; x < (size * size - 1); x += size - 1)
 	{
 	seconddiagonal += a[x];
 	}
