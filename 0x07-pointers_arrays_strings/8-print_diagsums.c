@@ -1,32 +1,25 @@
 #include <stdio.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
+ * print_diagsums - writes the character c to stdout
+ * @a: The character to print
+ * @size: aja
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
 void print_diagsums(int *a, int size)
 {
 	int x;
-	int y;
 	int diagonal = 0;
 	int seconddiagonal = 0;
 
-	for (x = 0; x < size; x++)
+	for (x = 0; x < (size * size); x += size + 1)
 	{
-		for (y = 0; y < size; y++)
-		{
-		
-			if(x == y)
-			{
-				diagonal = a[x + y];
-			}
-			if ((x + y) == (size - 1))
-				seconddiagonal = a[x + y];
-		}
+	diagonal += a[x];
 	}
-	printf("%i", diagonal);
-	printf("%i", seconddiagonal);
+	for (x = size - 1; x < (size * size - 1); x += size - 1)
+	{
+	seconddiagonal += a[x];
+	}
+	printf("%i, %i\n", diagonal, seconddiagonal);
 }
