@@ -1,13 +1,13 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
+ * auxiliar - writes the character c to stdout
+ * @n: The character to print
+ * @b: aasda
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int auxiliar (int n, int b)
+int auxiliar(int n, int b)
 {
 
 	if (b * b == n)
@@ -19,13 +19,18 @@ int auxiliar (int n, int b)
 	{
 		return (-1);
 	}
-
 	else
 	{
 	return (auxiliar(n, b + 1));
-}  
 }
-
+}
+/**
+ * _sqrt_recursion - writes the character c to stdout
+ * @n: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
 int _sqrt_recursion(int n)
 {
 	int b = 2;
@@ -42,6 +47,6 @@ int _sqrt_recursion(int n)
 
 	else
 	{
-	return(auxiliar(n, b + 1));
+	return (auxiliar(n, b + 1));
 	}
 }
