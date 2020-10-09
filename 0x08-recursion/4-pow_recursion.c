@@ -1,9 +1,9 @@
 #include <unistd.h>
 
 /**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
+ * _pow_recursion - writes the character c to stdout
+ * @x: The character to print
+ * @y: The character to print
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
@@ -21,6 +21,6 @@ int _pow_recursion(int x, int y)
 
 	else
 	{
-	return(_pow_recursion(x, y - 1) * x);
+	return (_pow_recursion(x, y - 1) * x);
 	}
 }
