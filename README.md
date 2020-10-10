@@ -1,1 +1,1 @@
-This is a project about learning how to program in C. Made by Matias Zappino.
+Low Level Programming. Made by Matias Zappino for Holberton School.
