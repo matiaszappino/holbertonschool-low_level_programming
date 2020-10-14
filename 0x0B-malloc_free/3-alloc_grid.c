@@ -1,6 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <stdio.h>
 /**
  * alloc_grid - writes the character c to stdout
  * @width: The character to print
@@ -28,6 +27,11 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		array[i] = (int *)malloc(height * sizeof(int));
+
+		if (array[i] == NULL)
+		{
+		return (NULL);
+		}
 	}
 		for (i = 0; i < height; i++)
 		{
