@@ -1,4 +1,5 @@
 #include "holberton.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 /**
@@ -25,7 +26,7 @@ char *argstostr(int ac, char **av)
 	}
 	cont = cont + ac;
 
-	array = (char *) malloc(cont * sizeof(char));
+	array = (char *) malloc(cont * sizeof(char) + 1);
 
 	if (array == NULL)
 	{
