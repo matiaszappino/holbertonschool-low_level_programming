@@ -13,10 +13,8 @@ char *argstostr(int ac, char **av)
 	int i, j, l, cont;
 	char *array;
 
-	if (ac == 1 || av == NULL)
+	if (!(ac == 0 || av == NULL))
 	{
-		return (NULL);
-	}
 
 	for (i = 0; i < ac; i++)
 	{
@@ -45,5 +43,11 @@ char *argstostr(int ac, char **av)
 		array[l++] = '\n';
 
 	}
-return (array);
+	return (array);
+	}
+
+	else
+	{
+	return (NULL);
+	}
 }
