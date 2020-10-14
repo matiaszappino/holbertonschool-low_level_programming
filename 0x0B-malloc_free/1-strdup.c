@@ -35,5 +35,4 @@ char *_strdup(char *str)
 		}
 	return (p);
 	}
-return (NULL);
 }
