@@ -1,7 +1,6 @@
 #include "holberton.h"
 #include <stdlib.h>
 #include <stdio.h>
-#include "holberton.h"
 /**
  * main - Prints the result of a multiplication
  * @argc: Argument Count
@@ -19,6 +18,7 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 	num1 = atoi(argv[1]);
+	num2 = atoi(argv[2]);
 
 	if (num1 == 0 && *argv[1] != 48)
 	{
@@ -26,7 +26,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	num2 = atoi(argv[2]);
 	mul = num1 * num2;
 	printf("%lu", mul);
 	return (0);
