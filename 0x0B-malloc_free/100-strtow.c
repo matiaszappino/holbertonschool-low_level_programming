@@ -59,7 +59,7 @@ char **strtow(char *str)
         }
 	printf("%s\n", aux1);
 	printf("%d\n%d\n", original, espacios);
-	aux2 = (char **) malloc((original - espacios + palabra)*sizeof(char **));
+	aux2 = (char **) malloc(100*sizeof(char **));
 
 	if (aux2 == NULL)
 	{
