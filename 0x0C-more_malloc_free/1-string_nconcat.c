@@ -59,7 +59,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		array[i] = s1[i];
 	}
-	for (k = 0; k <= n; k++)
+	for (k = 0; k < n; k++)
 	{
 		array[i + k] = s2[k];
 	}
