@@ -65,7 +65,9 @@ char **strtow(char *str)
 	{
 	return (NULL);
 	}
-	for (m = 0; *aux2[m] <= (original - espacios + palabra); m++, aux2++)
+	for (m = 0; m <= (original - espacios + palabra); m++)
+{
+for (n = 0; 
 	{
 		*aux2 = aux1;
 	}
