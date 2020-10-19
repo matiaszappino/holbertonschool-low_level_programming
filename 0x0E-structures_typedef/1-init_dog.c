@@ -1,9 +1,9 @@
 /**
  * init_dog - writes the character c to stdout
- * d: pointer
- * name: name of the dog
- * age: age of the dog
- * owner: name of the owner
+ * @d: pointer
+ * @name: name of the dog
+ * @age: age of the dog
+ * @owner: owner of the dog
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
