@@ -1,5 +1,4 @@
 #include "dog.h"
-#include <stdio.h>
 /**
  * init_dog - writes the character c to stdout
  * @d: pointer
@@ -11,9 +10,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	if (dog == NULL)
-
-	return (NULL);
+	if (dog == 0)
+		return (0);
 
 	d->name = name;
 	d->age = age;
