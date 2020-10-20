@@ -1,37 +1,25 @@
 #ifndef dog_n
 #define dog_n
-#define dog_n
+
 /**
- * struct dog - writes the character c to stdout
- * @name: name
- * @age: age
- * @owner: owner
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * struct dog - struct of dog
+ * @name: name of dog
+ * @age: age of dog
+ * @owner: owner of dog
+ * Return: return always 0
  */
-struct dog
+
+typedef struct dog
 {
-	char *name;
-	float age;
-	char *owner;
-};
+char *name;
+float age;
+char *owner;
+} dog_t;
+
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-/**
- * struct dog_t - writes the character c to stdout
- * @name: name
- * @age: age
- * @owner: owner
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
- */
-typedef struct dog_t
-{
-	char *name;
-	float age;
-	char *owner;
-}dog_t;
 dog_t *new_dog(char *name, float age, char *owner);
 void free_dog(dog_t *d);
 char *_strdup(char *str);
+
 #endif
