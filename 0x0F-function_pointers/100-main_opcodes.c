@@ -8,7 +8,7 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
+	int i = 0;
 	unsigned char *p = (char *)main;
 
 	if (argc != 2)
@@ -22,8 +22,6 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(2);
 	}
-	i = 0;
-
 	while (i < (atoi(argv[1]) - 1))
 	{
 		printf("%02x ", *p);
