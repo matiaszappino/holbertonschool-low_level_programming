@@ -28,6 +28,6 @@ int main(int argc, char *argv[])
 		i++;
 		p++;
 	}
-printf("%x02\n", *p);
+printf("%02x\n", *p);
 return (0);
 }
