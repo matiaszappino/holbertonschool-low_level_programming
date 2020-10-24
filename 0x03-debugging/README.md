@@ -49,11 +49,11 @@ carrie@ubuntu:/debugging$ wc -l 0-main.c
 16 1-main.c
 carrie@ubuntu:/debugging$
 ```
-######Repo:
+###### Repo:
 
-######GitHub repository: holbertonschool-low_level_programming
-######Directory: 0x03-debugging
-######File: 0-main.c, holberton.h
+###### GitHub repository: holbertonschool-low_level_programming
+###### Directory: 0x03-debugging
+###### File: 0-main.c, holberton.h
 
 ## 1. Like, comment, subscribe mandatory
 
@@ -99,11 +99,11 @@ carrie@ubuntu:/debugging$ wc -l 1-main.c
 24 1-main.c
 carrie@ubuntu:/debugging$
 ```
-######Repo:
+###### Repo:
 
-######GitHub repository: holbertonschool-low_level_programming
-######Directory: 0x03-debugging
-######File: 1-main.c
+###### GitHub repository: holbertonschool-low_level_programming
+###### Directory: 0x03-debugging
+###### File: 1-main.c
 
 ## 2. 0 > 972? mandatory
 
@@ -177,11 +177,11 @@ Fix the code in 2-largest_number.c so that it correctly prints out the largest o
 
 - Line count will not be checked for this task.
 
-######Repo:
+###### Repo:
 
-######GitHub repository: holbertonschool-low_level_programming
-######Directory: 0x03-debugging
-######File: 2-largest_number.c, holberton.h
+###### GitHub repository: holbertonschool-low_level_programming
+###### Directory: 0x03-debugging
+###### File: 2-largest_number.c, holberton.h
 
 ## 3. Leap year mandatory
 
@@ -334,8 +334,8 @@ carrie@ubuntu:/debugging$
 - You can assume that all test cases have valid months (i.e. the value of month will never be less than 1 or greater than 12) and valid days (i.e. the value of day will never be less than 1 or greater than 31).
 - You can assume that all test cases have valid month/day combinations (i.e. there will never be a June 31st or November 31st, etc.), but not all month/day/year combinations are valid (i.e. February 29, 1991 or February 29, 2427).
 
-######Repo:
+###### Repo:
 
-######GitHub repository: holbertonschool-low_level_programming
-######Directory: 0x03-debugging
-######File: 3-print_remaining_days.c, holberton.h
+###### GitHub repository: holbertonschool-low_level_programming
+###### Directory: 0x03-debugging
+###### File: 3-print_remaining_days.c, holberton.h
