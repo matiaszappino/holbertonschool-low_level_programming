@@ -1,85 +1,87 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
-#include <stdio.h>
-#include <stdlib.h>
+
 /**
- * print_all - function tu print a name
- * @format: the format
- *
+ * print_int - function to print ints
+ * @args: va_list type
+ * Return: always successful
+ */
+void print_int(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+
+/**
+ * print_char - function to print char
+ * @args: va_list type
+ * Return: always successful
+ */
+
+void print_char(va_list args)
+{
+	printf("%c", va_arg(args, int));
+}
+/**
+ * print_float - function to print floats
+ * @args: va_list type
+ * Return: always successful
+ */
+void print_float(va_list args)
+{
+	printf("%f", va_arg(args, double));
+}
+
+/**
+ * print_string - function to print string
+ * @args: va_list type
+ * Return: always successful
+ */
+void print_string(va_list args)
+{
+	char *s;
+
+	s = va_arg(args, char*);
+	if (s == NULL)
+	{
+		s = "(nil)";
+	}
+	printf("%s", s);
+}
+
+/**
+ * print_all - function to print all inputs
+ * @format: const pointer to functionof type char
+ * Return: always successful
  */
 void print_all(const char * const format, ...)
 {
-	va_list milista;
-	int i = 0;
-	int j = 0;
-	char *str = "";
+	int i = 0, j = 0;
+	va_list args;
+	char *seperator;
+	op_t options[] = {
+	{"c", print_char},
+	{"i", print_int},
+	{"f", print_float},
+	{"s", print_string},
+	{NULL, NULL}
+};
 
-	op_t estructura[] = {
-
-        {"c", print_char},
-        {"i", print_int},
-        {"f", print_float},
-        {"s", print_char_pointer},
-        {NULL, NULL}
-	};
-
-	va_start(milista, format);
-
-	while (format[i] != '\0' && format)
+	va_start(args, format);
+	seperator = "";
+	while (format && format[i])
 	{
-		while (estructura[j].op != NULL)
-		{
-			if (format[i] == estructura[j].op[0])
-			{
-				estructura[j].call(str , milista);
-				str = ", ";
-				break;
-			}
-			j++;
-		}
 		j = 0;
-		i++;
+		while (options[j].c != NULL)
+		{
+			if (format[i] == options[j].c[0])
+			{
+				printf("%s", seperator);
+				options[j].func(args);
+				seperator = ", ";
+			}
+		j++;
+		}
+	i++;
 	}
 	printf("\n");
-	va_end(milista);
-}
-/**
- * op_add - operation
- * @a: integer a
- * @b: integer b
- * Return: result
- */
-void print_char(char *str, va_list milista)
-{
-        printf("%s%c", str, va_arg(milista, int));
-}
-/**
- * op_sub - operation
- * @a: integer a
- * @b: integer b
- * Return: result
- */
-void print_int(char *str, va_list milista)
-{
-        printf("%s%i", str, va_arg(milista, int));
-}
-/**
- * op_mul - operation
- * @a: integer a
- * @b: integer b
- * Return: result
- */
-void print_float(char *str, va_list milista)
-{
-        printf("%s%f", str, va_arg(milista, double));
-}
-/**
- * op_div - operation
- * @a: integer a
- * @b: integer b
- * Return: result
- */
-void print_char_pointer(char *str, va_list milista)
-{
-        printf("%s%s", str, va_arg(milista, char*));
+	va_end(args);
 }
