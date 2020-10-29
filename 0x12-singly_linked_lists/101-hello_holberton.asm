@@ -1,16 +1,19 @@
-section	.text
-   global main     ;must be declared for linker (ld)
-	
-main:	            ;tells linker entry point
-   mov	edx,len     ;message length
-   mov	ecx,msg     ;message to write
-   mov	ebx,1       ;file descriptor (stdout)
-   mov	eax,4       ;system call number (sys_write)
-   int	0x80        ;call kernel
-	
-   mov	eax,1       ;system call number (sys_exit)
-   int	0x80        ;call kernel
-
-section	.data
-msg db 'Hello, Holberton', 0xa  ;string to be printed
-len equ $ - msg     ;length of the string
+%define sys_write 1
+%define stdout 1
+%define sys_exit 60
+%define success 0
+%define nl 10
+section .data
+    message db "Hello, Holberton", nl
+    message_len equ $-message
+section .text
+global main
+main:
+    mov rax, sys_write
+    mov rdi, stdout
+    mov rsi, message
+    mov rdx, message_len
+    syscall
+    mov rax, sys_exit
+    mov rdi, success
+    syscall
