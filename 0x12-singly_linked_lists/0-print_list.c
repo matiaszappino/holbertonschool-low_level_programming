@@ -1,7 +1,5 @@
 #include "lists.h"
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 /**
  * print_list - function to print a list
  * @h: pointer to list
