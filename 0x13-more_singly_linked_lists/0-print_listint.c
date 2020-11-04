@@ -1,5 +1,7 @@
-#include "lists.h"
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
+#include "lists.h"
 /**
  * print_listint - function to print a list
  * @h: pointer to list
@@ -14,9 +16,16 @@ size_t print_listint(const listint_t *h)
 
 	while (h != NULL)
 	{
-		printf("%i\n", h->n);
-		i++;
-		h = h->next;
+		if (h->n == NULL)
+		{
+			printf("Error\n");
+		}
+		else
+		{
+			printf("%i\n", h->n);
+		}
+	i++;
+	h = h->next;
 	}
 return (i);
 }
