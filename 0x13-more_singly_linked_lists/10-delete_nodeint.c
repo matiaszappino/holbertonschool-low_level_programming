@@ -1,9 +1,12 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
 #include "lists.h"
 /**
- * delete_nodeint_at_index - deletes a node at a given idx
- * @head: the inital pointer to the linked list
- * @index: the index
- * Return: the new node
+ * delete_nodeint_at_index - deletes a node at index
+ * @head: pointer to the list
+ * @index: index
+ * Return: new node
  */
 int delete_nodeint_at_index(listint_t **head, unsigned int index)
 {
