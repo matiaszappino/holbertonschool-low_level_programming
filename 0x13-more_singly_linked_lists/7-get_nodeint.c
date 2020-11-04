@@ -3,8 +3,9 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * free_list - function to print a list
+ * get_nodeint_at_index - function to get a node at index
  * @head: pointer to list
+ * @index: index
  * Return: the number of nodes
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)

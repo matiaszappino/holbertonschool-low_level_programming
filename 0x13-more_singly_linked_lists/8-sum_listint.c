@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * free_list - function to print a list
+ * sum_listint - function that returns the sum of the nodes
  * @head: pointer to list
- * Return: the number of nodes
+ * Return: the sum
  */
 int sum_listint(listint_t *head)
 {

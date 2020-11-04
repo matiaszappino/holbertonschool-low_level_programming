@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * free_list - function to print a list
+ * pop_listint - function to print a list
  * @head: pointer to list
- * Return: the number of nodes
+ * Return: n
  */
 int pop_listint(listint_t **head)
 {
