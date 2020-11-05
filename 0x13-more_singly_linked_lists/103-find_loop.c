@@ -10,6 +10,7 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	listint_t *fast_ptr, *slow_ptr;
 	bool is_loop;
+
 	if (head == NULL)
 		return (NULL);
 	fast_ptr = head;
