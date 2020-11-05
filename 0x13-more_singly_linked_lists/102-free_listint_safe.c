@@ -12,10 +12,6 @@ size_t free_listint_safe(listint_t **h)
 	if (!h)
 		return (0);
 	while (*h)
-	{
-		aux = *h;
-		*h = (*h)->next;
-		free(aux), i++;
-	}
-return (i);
+		aux = *h, *h = (*h)->next, free(aux), i++;
+	return (i);
 }
