@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include "holberton.h"
 /**
- * create_file - Function tu read a textfile
+ * append_text_to_file - Function tu read a textfile
  * @filename: Name of the file
  * @text_content: content
  * Return: 1 on success -1 on fail
