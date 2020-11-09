@@ -55,14 +55,6 @@ int main(int ac, char **av)
 				exit(99);
 			}
 	}
-
-        if (numRead == -1)
-		{
-			free(buffer);
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			exit(98);
-		}
-
 	fc1 = close(fo1);
 	if (fc1 == -1)
 	{
