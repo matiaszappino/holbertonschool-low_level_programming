@@ -1,30 +1,51 @@
-int main(int ac, char **av)
+#include "holberton.h"
+#define BUFFER_SIZE 1024
+int main(int ac, char *av[])
 {
-	char *file_to = av[2];
-	char *file_from = av[3];
-	char buf[1024];
+	char *buffer;
+	int fc1, fc2, fo1, fo2, fw;
+	ssize_t numRead;
 
 	if (ac != 3)
 	{
-		dprintf("Usage: cp file_from file_to\n");
-		exit (97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 
-	if (av[2] == NULL)
+	fo1 = open(av[1], O_RDONLY);
+	fo2 = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
+	if (!fo1)
 	{
-		dprintf("Error: Can't read from file NAME_OF_THE_FILE\n");
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
 		exit (98);
 	}
-
-	fo = open(file_from, O_RDONLY, 0664);
-
-	if (fo == -1)
-		return (-1);
-
-	fd = open(file_to, O_CREAT | O_TRUNC | O_RDWR, 0664);
-
-	if (fd == -1)
-		return (-1);
-
-return (0);
+	buffer = malloc(sizeof(char) * BUFFER_SIZE);
+	if (!buffer)
+		return (0);
+	numRead = read(fo1, buffer, BUFFER_SIZE);
+	if (!(numRead))
+	{
+                dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
+                exit (98);
+        }
+	while (numRead > 0)
+	{
+		fw = write(fo2, buffer, numRead);
+		if (!fw)
+			return (-1);
+	}
+	fc1 = close(fo1);
+	if (fc1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc1);
+		exit(100);
+	}
+	fc2 = close(fo2);
+	if (fc2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc2);
+		exit(100);
+	}
+	free(buffer);
+return (1);
 }
