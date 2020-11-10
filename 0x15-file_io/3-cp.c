@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	}
 
 	fo1 = open(av[1], O_RDONLY);
-	if (fo1 == -1)
+	if (fo1 == -1 || av[1] == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
