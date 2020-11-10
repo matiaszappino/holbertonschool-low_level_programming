@@ -35,6 +35,7 @@ int main(int ac, char **av)
 		if (write(fo2, buffer, numr) != numr)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			close(fo1);
 			exit(99);
 		}
 
