@@ -9,6 +9,7 @@ int main(int ac, char **av)
 {
 	char *buffer[1024];
 	int fc1, fc2, fo1, fo2;
+	numRead = 1;
 
 	if (ac != 3)
 	{
