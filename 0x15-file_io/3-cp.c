@@ -31,7 +31,7 @@ int main(int ac, char **av)
         }
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
-		return (0);
+		return (-1);
 
 	while ((numRead = read(fo1, buffer, 1024)) > 0)
 	{
