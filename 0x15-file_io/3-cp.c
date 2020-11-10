@@ -27,7 +27,7 @@ int main(int ac, char **av)
 	
 	while ((numr = read(fo1, buffer, 1024)) > 0)
 	{
-		if (fo2 == -1 || write(fo2, buffer, numr) != numr)
+		if (fo2 < 0 || write(fo2, buffer, numr) != numr)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]);
 			close(fo1);
@@ -36,7 +36,7 @@ int main(int ac, char **av)
 
 	}
 
-	if (numr == -1)
+	if (numr < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
