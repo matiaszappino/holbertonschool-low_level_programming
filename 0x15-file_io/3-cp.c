@@ -29,7 +29,7 @@ int main(int ac, char **av)
 	{
 		if (fo2 < 0 || write(fo2, buffer, numr) != numr)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			close(fo1);
 			exit(99);
 		}
