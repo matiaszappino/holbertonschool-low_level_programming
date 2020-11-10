@@ -31,7 +31,7 @@ int main(int ac, char **av)
         }
 	buffer = malloc(sizeof(char) * 1024);
 	if (!buffer)
-		return (-1);
+		return (0);
 
 	while ((numRead = read(fo1, buffer, 1024)) > 0)
 	{
@@ -39,7 +39,7 @@ int main(int ac, char **av)
 		{
 			free(buffer);
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
-			exit(98);
+			exit(99);
 		}
 
 	}
