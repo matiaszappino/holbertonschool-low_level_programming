@@ -24,15 +24,10 @@ int main(int ac, char **av)
 		exit(98);
 	}
 	fo2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
-        if (fo2 == -1)
-        {
-                dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
-                exit(99);
-        }
 	
 	while ((numr = read(fo1, buffer, 1024)) > 0)
 	{
-		if (write(fo2, buffer, numr) != numr)
+		if (fo2 == -1 || write(fo2, buffer, numr) != numr)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[1]);
 			close(fo1);
