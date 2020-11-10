@@ -9,7 +9,7 @@ int main(int ac, char **av)
 {
 	char *buffer[1024];
 	int fc1, fc2, fo1, fo2;
-	numRead = 1;
+	int numr = 1;
 
 	if (ac != 3)
 	{
@@ -30,9 +30,9 @@ int main(int ac, char **av)
                 exit(99);
         }
 	
-	while ((numRead = read(fo1, buffer, 1024)) > 0)
+	while ((numr = read(fo1, buffer, 1024)) > 0)
 	{
-		if (fo2 < 0 || write(fo2, buffer, numRead) != numRead)
+		if (fo2 < 0 || write(fo2, buffer, numr) != numr)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			exit(99);
@@ -40,7 +40,7 @@ int main(int ac, char **av)
 
 	}
 
-	if (numRead < 0)
+	if (numr < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
