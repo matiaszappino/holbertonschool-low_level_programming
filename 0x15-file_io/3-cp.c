@@ -7,7 +7,7 @@
  */
 int main(int ac, char **av)
 {
-	char *buffer[1024];
+	char buffer[1024];
 	int fc1, fc2, fo1, fo2;
 	int numr = 1;
 
@@ -18,7 +18,7 @@ int main(int ac, char **av)
 	}
 
 	fo1 = open(av[1], O_RDONLY);
-	if (fo1 == -1 || av[1] == NULL)
+	if (fo1 == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 		exit(98);
