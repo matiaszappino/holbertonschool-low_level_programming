@@ -1,12 +1,48 @@
 #include "holberton.h"
+<<<<<<< HEAD
 #define BUFFER_SIZE 1024
 #include <stdlib.h>
 #include <stdio.h>
 int main(int ac, char *av[])
+=======
+/**
+ *ifclosefc1 - copies the content of a file to another file
+ *@fc1: fc1
+ *Return: void
+ */
+void ifclosefc1(int fc1)
+>>>>>>> 1dd854b71678dd59aed079dfbf1013a59fabfc2f
 {
-	char *buffer;
-	int fc1, fc2, fo1, fo2, fw;
-	ssize_t numRead;
+	if (fc1 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc1);
+		exit(100);
+	}
+}
+/**
+ *ifclosefc2 - copies the content of a file to another file
+ *@fc2: fc2
+ *Return: void
+ */
+void ifclosefc2(int fc2)
+{
+	if (fc2 == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fc2);
+		exit(100);
+	}
+}
+/**
+ *main - copies the content of a file to another file
+ *@ac: argument count
+ *@av: argument vector
+ *Return: 1 on success, -1 on failure
+ */
+int main(int ac, char **av)
+{
+	char buffer[1024];
+	int fc1, fc2, fo1, fo2;
+	int numr = 1;
 
 	if (ac != 3)
 	{
@@ -15,18 +51,15 @@ int main(int ac, char *av[])
 	}
 
 	fo1 = open(av[1], O_RDONLY);
-	fo2 = open(av[2], O_CREAT | O_TRUNC | O_RDWR, 0664);
-	if (!fo1)
+	if (fo1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
-		exit (98);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
 	}
-	buffer = malloc(sizeof(char) * BUFFER_SIZE);
-	if (!buffer)
-		return (0);
-	numRead = read(fo1, buffer, BUFFER_SIZE);
-	if (!(numRead))
+	fo2 = open(av[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	while ((numr = read(fo1, buffer, 1024)) > 0)
 	{
+<<<<<<< HEAD
                 dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
                 exit (98);
         }
@@ -38,19 +71,25 @@ int main(int ac, char *av[])
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
 			exit (99);
 		}
+=======
+		if (fo2 < 0 || write(fo2, buffer, numr) != numr)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			close(fo1);
+			exit(99);
+		}
+
+>>>>>>> 1dd854b71678dd59aed079dfbf1013a59fabfc2f
+	}
+
+	if (numr < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+		exit(98);
 	}
 	fc1 = close(fo1);
-	if (fc1 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc1);
-		exit(100);
-	}
+	ifclosefc1(fc1);
 	fc2 = close(fo2);
-	if (fc2 == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %i", fc2);
-		exit(100);
-	}
-	free(buffer);
-return (1);
+	ifclosefc2(fc2);
+	return (0);
 }
