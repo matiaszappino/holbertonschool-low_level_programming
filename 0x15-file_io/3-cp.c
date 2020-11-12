@@ -1,5 +1,7 @@
 #include "holberton.h"
 #define BUFFER_SIZE 1024
+#include <stdlib.h>
+#include <stdio.h>
 int main(int ac, char *av[])
 {
 	char *buffer;
@@ -32,7 +34,10 @@ int main(int ac, char *av[])
 	{
 		fw = write(fo2, buffer, numRead);
 		if (!fw)
-			return (-1);
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s", av[1]);
+			exit (99);
+		}
 	}
 	fc1 = close(fo1);
 	if (fc1 == -1)
