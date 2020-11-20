@@ -1,63 +1,79 @@
+#include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <sys/types.h>
 #include <sys/wait.h>
-#include <stdlib.h>
-size_t prompt(char *pbuffer, size_t);
-int read_buffer(char *buffer);
-
+ssize_t prompt(char *pbuffer, size_t buffsize);
+char** read_buffer(char *buffer);
+int count_tokens(char *buffer);
 int main(void)
 {
-    size_t buffsize = 1024;
-    char *buffer;
-    char *pbuffer = buffer;
-    pid_t process;
-	int status;
+        size_t buffsize = 1024;
+        char *buffer;
+        char *pbuffer = buffer;
+        pid_t process;
+        int status;
+        int num_of_tokens = 0;
+	char **hola;
 
-    buffer = (char *)malloc(sizeof(char) * buffsize);
-    if (!buffer)
-        return (-1); 
-
-    while (1)
-    {
-        prompt(pbuffer, buffsize);
-        read_buffer(buffer);
-        if (read_buffer)
+        buffer = malloc(sizeof(char) * buffsize);
+        if (!buffer)
+                return (-1);
+        while (1)
         {
-            process = fork();
-            if (process == 1)
-                printf("Error\n");
-            if (process > 0)
-                wait(&status);
-            //if (process == 0)
+                prompt(pbuffer, buffsize);
+                num_of_tokens = count_tokens(pbuffer);
+                hola = read_buffer(pbuffer);
+                printf("Numero de tokens = %d\n", num_of_tokens);
         }
-    }
-return (0);
+        return (0);
 }
-
 /*imprime prompt en pantalla*/
-size_t prompt(char *pbuffer, size_t buffsize)
+ssize_t prompt(char *pbuffer, size_t buffsize)
 {
-    ssize_t l_characters;
-
-    write(STDOUT_FILENO, "$ ", 2);
-    getline(&pbuffer, &buffsize, stdin);
-
-    return (l_characters);
+        ssize_t l_characters;
+        write(STDOUT_FILENO, "$ ", 2);
+        /*guarda linea de comandos en buffer*/
+        l_characters = getline(&pbuffer, &buffsize, stdin);
+        return (l_characters);
 }
-
-int read_buffer(char *buffer)
+char** read_buffer(char *buffer)
 {
-    char *token;
-	int number_of_tokens= 0;
+        char **args;
+        char *token;
+        int i = 0;
+	int j;
 
-	token = (char *)strtok(buffer, " ");
+	for (j = 0; j < 8; j++)
+	{
+		args[j] = malloc(sizeof(char*) * 20);
+	}
 
-    while (token != NULL)
-    {
-        token = (char *)strtok(NULL, " ");
-        number_of_tokens++;
-        printf("%s\n", token);
-    }
+        if(!args)
+                return (NULL);
+        /*separo primer token*/
+        token = strtok(buffer, " ");
+        while (token != NULL)
+        {
+                /*guardo token en array de punteros*/
+                args[i] = token;
+                i++;
+                /*printf("%s\n", args[i]);*/
+                token = strtok(NULL, " ");
+        }
+        return (args);
+}
+/*cuenta tokens*/
+int count_tokens(char *buffer)
+{
+        int num_tokens = 0;
+        char * token;
+        token = strtok(buffer, " ");
+        while (token != NULL)
+        {
+                num_tokens++;
+                token = strtok(NULL, " ");
+        }
+        return (num_tokens);
 }
