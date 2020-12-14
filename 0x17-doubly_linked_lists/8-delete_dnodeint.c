@@ -1,48 +1,57 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - function that inserts a new node at a given position.
- * @h: h
- * @idx: index
- * @n: n
- * Return: 1 on succes -1 if it fails
+ * delete_dnodeint_at_index - deletes the node at index index of a dlistint_t linked list.
+ * @head: head
+ * @index: index
+ * Return: Returns 1 if it succeeded, -1 if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *aux;
-	dlistint_t *aux_fast;
-	unsigned int contador = 0;
+	dlistint_t *aux, *aux_two = NULL;
+	unsigned int i = 0;
 
 	if (!head)
 		return (-1);
-
+	if (index >= dlistint_len(*head))
+		return (-1);
 	aux = *head;
-	aux_fast = *head;
-
-if (index == 0)
-		*head = (*head)->next;
-
-	else
+	if (index == 0)
 	{
-		while(aux_fast->next && contador != index)
-		{
-			contador++;
-			aux_fast = aux_fast->next;
+		aux_two = *head;
+		*head = (*head)->next;
+		(*head)->prev = NULL;
+		free(aux_two);
+		return (1);
+	}
+	if (index == dlistint_len(*head) - 1)
+	{
+		while (i++ < index - 1)
 			aux = aux->next;
-		}
+		aux_two = aux->next;
+		aux->next = NULL;
+		free(aux_two);
+		return (1);
+	}
+	while (i++ < index - 1)
+		aux = aux->next;
+	aux_two = aux->next;
+	aux->next = aux->next->next;
+	aux->next->prev = aux;
+	free(aux_two);
+	return (1);
+}
+/**
+ * dlistint_len - counter of nodes
+ * @head: head
+ * Return: quantity of nodes
+ */
+size_t dlistint_len(const dlistint_t *head)
+{
+	size_t counter;
 
-		aux_fast = aux_fast->next->next;
-
-		if (contador < index)
-			return (-1);
-
-		else
-		{
-			aux->next = aux_fast;
-			aux_fast->prev = aux;
-		}
-	}	
-return (1);
+	for (counter = 0; head; counter++)
+	{
+		head = head->next;
+	}
+	return (counter);
 }
