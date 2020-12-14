@@ -4,6 +4,7 @@
  * @head: head
  * @index: index
  * Return: Returns 1 if it succeeded, -1 if it failed
+ */
 
 	if (!head)
 		return (-1);
