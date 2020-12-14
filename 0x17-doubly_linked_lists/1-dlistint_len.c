@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "lists.h"
 /**
- * dist_len - function that returns the number of elements in a linked dlistint_t list.
+ * dlistint_len - returns the number of elements in a linked dlistint_t list.
  * @h: pointer
  * Return: the number of nodes
  */
