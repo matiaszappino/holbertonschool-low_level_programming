@@ -1,58 +1,63 @@
-#include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 #include "lists.h"
 /**
- * insert_dnodeint_at_index - function that inserts a new node at a given position.
- * @h: h
- * @idx: index
- * @n: n
- * Return: Always EXIT_SUCCESS.
+ *dlistint_len - counter of nodes
+ *@h: h
+ *Return: quantity of nodes
+ */
+size_t dlistint_len(const dlistint_t *h)
+{
+	size_t count = 0;
+	const dlistint_t *aux;
+
+	if (h == NULL)
+	{
+		return (0);
+	}
+	aux = h;
+
+	while (aux)
+	{
+		aux = aux->next;
+		count++;
+	}
+	return (count);
+}
+/**
+ *insert_dnodeint_at_index - inserts a new node at a given position.
+ *@h: h
+ *@idx: index of new node
+ *@n: node int
+ *Return: Returns a new node or NULL if it fails
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *aux;
-	dlistint_t *new;
-
-	unsigned int contador = 0;
+	dlistint_t *aux, *new;
+	unsigned int i = 0;
 
 	if (!h)
-		return (0);
-
-	aux = *h;
-
-	new = malloc(sizeof(dlistint_t));
-
-	if (!new)
-		return (0);
-
-	new->n = n;
-
-	while(aux->next && contador != idx)
-	{
-		contador++;
-		aux = aux->next;
-	}
-
-	if (contador < idx)
 		return (NULL);
 
-	else
-	{
-		if (*h == NULL)
-		{
-			*h = new;
-			new->next = NULL;
-			new->prev = NULL;
-		}
-		new->next = aux;
-		aux = aux->prev;
-		new->prev = aux;
-		aux->next = new;
-		aux = aux->next->next;
-		aux->prev = new;
+	if (idx > dlistint_len(*h))
+		return (NULL);
+
+	if (idx == 0 || *h == NULL)
+		return (add_dnodeint(h, n));
+
+	if (idx == dlistint_len(*h))
+		return (add_dnodeint_end(h, n));
+
+	new = malloc(sizeof(dlistint_t));
+	if (!new)
+		return (NULL);
+
+	aux = *h;
+	while (i++ < idx - 1)
+		aux = aux->next;
+
+	aux->next->prev = new;
+	new->next = aux->next;
+	aux->next = new;
+	new->n = n;
+	new->prev = aux;
+	return (new);
 	}
-return (new);
-}
-		
-		
