@@ -9,7 +9,7 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	char *copy, *key_copy;
-	unsigned long int indice;
+	unsigned long int indice, i;
 	hash_node_t *new_element;
 
 	if (ht == NULL)
