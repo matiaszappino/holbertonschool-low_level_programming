@@ -8,25 +8,25 @@ def island_perimeter(grid):
     if len(grid) == 0 or grid is None:
         return 0
 
+    alto = len(grid)
+    largo = len(grid[0])
+    perimeter = 0
+
     for lists in grid:
         for elem in lists:
             if type(elem) is not int:
                 return
 
-    counter = 0
-    height = 0
-    array = []
-
-    for i in range(len(grid)):
-        flag = 0
-        counter = 0
-        for x in range(len(grid[0])):
-            if grid[i][x] == 1:
-                counter += 1
-                flag = 1
-        if flag == 1 and counter != 0:
-            array.append(counter)
-        if flag == 1:
-            height += 1
-    width = max(array)
-    return (width + height) * 2
+    for y in range(alto):
+        for x in range(largo):
+            if grid[y][x] == 0:
+                continue
+            if y == 0 or grid[y - 1][x] == 0:
+                perimeter += 1
+            if y == alto - 1 or grid[y + 1][x] == 0:
+                perimeter += 1
+            if x == 0 or grid[y][x - 1] == 0:
+                perimeter += 1
+            if x == largo - 1 or grid[y][x + 1] == 0:
+                perimeter += 1
+    return perimeter
