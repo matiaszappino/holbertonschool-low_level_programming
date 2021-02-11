@@ -5,6 +5,9 @@
 def island_perimeter(grid):
     """Function that returns the perimeter of an island"""
 
+    if len(grid) == 0 or grid is None:
+        return 0
+
     for lists in grid:
         for elem in lists:
             if type(elem) is not int:
