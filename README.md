@@ -1,130 +1,35 @@
-<p align="center">
-   <img src="https://www.holbertonschool.com/holberton-logo.png"(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTLtL_ToHLEo_BWFxD-yf32Ux3zfsH_NPc8Qw&usqp=CAU)
-     alt="Flow chart"
-     style="float: left; margin-right: 10px;">
-</p>
+# Low-Level Programming - Data Structures, Algorithms, Linux/Unix System Programming
 
-<p align="center">PROJECT SIMPLE_SHELL</p>
+## Projects related to this track:
 
-## SIMPLE_SHELL 🐚
-A simple UNIX command interpreter written as part of the low-level programming and algorithm track at Holberton School.
+* [0x00. C - Hello, World](./0x00-hello_world)
+* [0x00. C - Hello, World](./0x00-hello_world)
+* [0x01. C - Variables, if, else, while](./0x01-variables_if_else_while)
+* [0x03. C - Debugging](./0x03-debugging)
+* [0x02. C - Functions, nested loops](./0x02-functions_nested_loops)
+* [0x04. C - More functions, more nested loops](./0x04-more_functions_nested_loops)
+* [0x05. C - Pointers, arrays and strings](./0x05-pointers_arrays_strings)
+* [0x06. C - More pointers, arrays and strings](./0x06-pointers_arrays_strings)
+* [0x07. C - Even more pointers, arrays and strings](./0x07-pointers_arrays_strings)
+* [0x08. C - Recursion](./0x08-recursion)
+* [0x09. C - Static libraries](./)
+* [0x0A. C - argc, argv](./0x0A-argc_argv)
+* [0x0B. C - malloc, free](./0x0B-malloc_free)
+* [0x0C. C - More malloc, free](./0x0C-more_malloc_free)
+* [0x0D. C - Preprocessor](.0x0D-preprocessor/)
+* [0x0E. C - Structures, typedef](./0x0E-structures_typedef)
+* [0x0F. C - Function pointers](./0x0F-function_pointers)
+* [0x10. C - Variadic functions](./0x10-variadic_functions)
+* [0x11. C - printf](https://github.com/matiaszappino/printf)
+* [0x12. C - Singly linked lists](./0x12-singly_linked_lists)
+* [0x13. C - More singly linked lists](./0x13-more_singly_linked_lists)
+* [0x14. C - Bit manipulation](./0x14-bit_manipulation)
+* [0x15. C - File I/O](./0x15-file_io)
+* [0x16. C - Simple Shell](https://github.com/matiaszappino/simple_shell)
+* [0x17. C - Doubly linked lists](./0x17-doubly_linked_lists)
+* [0x18. C - Dynamic libraries](./0x18-dynamic_libraries)
+* [0x19. C - Stacks, Queues - LIFO, FIFO](https://github.com/matiaszappino/monty)
+* [0x1A. C - Hash tables](./0x1A-hash_tables)
+* [0x1B. C - Sorting algorithms & Big O](https://github.com/matiaszappino/sorting_algorithms)
 
-### Installation
-
-#### Requirements
- - Gcc >= 4.8.4
- - Linux
-
-#### Steps to compile and execute.
- - `git clone https://github.com/gdorelo/simple_shell.git`
- - `cd simple_shell`
- - `gcc -Wall -Werror -Wextra -pedantic *.c -o hsh`
- - `./hsh`
-
-
-### Sys Functions
-Prototypes | Description
------------ | -------------
-**loop** | Start the main loop our shell.
-**prompt** | Function to print our prompt line.
-**save_buffer** | Read the line command.
-**split_buffer** | Split line command and convert to *tokens* each argument.
-**execute** | Function to execute all arguments in command line.
-**find_path** | Searches the enviroment list to find the command's path.
-**split_path** | Function that splits the path.
-**_strcat** | Function to concatenates two strings.
-**_strcmp** | Function to comparates two strings.
-**_strlen** | Function to know the length of the string.
-**_strcpy** | Function to copy a string.
-
-### Flowchart
-
-<p align="center">
-   <img src="">
-</p>
-
-### Files
-This list is our files used to compile our shell
-
-* [shell.h](https://github.com/gdorelo/simple_shell/blob/master/shell.h)
-Header of functions where are store the prototypes and libraries.
-
-* [main.c](https://github.com/gdorelo/simple_shell/blob/master/main.c)
-Entry point to the shell.
-
-* [loop.c](https://github.com/gdorelo/simple_shell/blob/master/loop.c)
-Initializace the main loop of the shell.
-
-* [pathfinder.c](https://github.com/gdorelo/simple_shell/blob/master/pathfinder.c)
-Function to find a command with or without path.
-
-* [prompt.c](https://github.com/gdorelo/simple_shell/blob/master/prompt.c)
-Function to print the prompt.
-
-* [string_functions.c](https://github.com/gdorelo/simple_shell/blob/master/string_functions.c)
-Functions to handle strings.
-
-* [save_buffer.c](https://github.com/gdorelo/simple_shell/blob/master/save_buffer.c)
-Function that reads and saves the command line.
-
-* [split_buffer.c](https://github.com/gdorelo/simple_shell/blob/master/split_buffer.c)
-Functions to split the command line.
-
-* [split_path.c](https://github.com/gdorelo/simple_shell/blob/master/split_path.c)
-Function that splits the path.
-
-* [execute_command.c](https://github.com/gdorelo/simple_shell/blob/master/execute_command.c)
-Function execute each argument and return a integer to standard out.
-
-* [ctrlc.c](https://github.com/gdorelo/simple_shell/blob/master/ctrlc.c)
-Function to exit when user type "Ctrl + c".
-
-
-#### REQUIREMENTS
-
-* Allowed editors: *vi*, *vim*, *emacs*
-* All your files will be compiled on Ubuntu 14.04 LTS.
-* Your programs and functions will be compiled with *gcc 4.8.4* using the flags *-Wall -Werror -Wextra* and *-pedantic*
-* All your files should end with a new line
-* A *README.md* file, at the root of the folder of the project is mandatory
-* Your code should use the *Betty* style. It will be checked using *betty-style.pl* and *betty-doc.pl*
-* No more than 5 functions per file.
-* Your shell should not have any memory leaks.
-* All your header files should be include guarded.
-* Use system calls only when you need to (why?).
-
-
-### EXAMPLES
-#### Modes
-
-##### Non-interactive
-*Command*
-```
-echo "/bin/ls" | ./hsh
-```
-*Output*
-```
-example.c   example.c  example.c        file     man_1_simple_shell  example.c  README.md 
-AUTHORS  example.c      example.c  example.c  example.c      readline.c         shell.h 
-```
-<hr>
-
-##### Interactive
-*Command*
-```
-./hsh
-```
-Then the prompt appears, so you can type in the command line, and press return
-**Ex** - `/bin/ls`
-
-*Output*
-```
-example.c   example.c  example.c        file     man_1_simple_shell  example.c  README.md 
-AUTHORS  example.c      example.c  example.c  example.c      readline.c         shell.h  
-```
-
-
-
-<p align="center"> AUTHORS </p>
-<p align="center">
-    <h2 align="center">Made by Martin Saavedra y Matias Zappino</h2>
+#### Made By Matias Zappino at Holberton School
