@@ -32,4 +32,9 @@
 * [0x1A. C - Hash tables](./0x1A-hash_tables)
 * [0x1B. C - Sorting algorithms & Big O](https://github.com/matiaszappino/sorting_algorithms)
 
-#### Made By Matias Zappino at Holberton School
+#### Made by Matias Zappino at Holberton School
+
+<p align="center">
+  <img src="http://www.holbertonschool.com/holberton-logo.png"
+       alt="Holberton School logo">
+</p>
